@@ -33,11 +33,15 @@ namespace FSLib.Network.Http
 			_object = obj;
 		}
 
-		/// <summary>
-		/// 准备发出请求
-		/// </summary>
-		/// <param name="request"></param>
-		public override void Prepare(HttpWebRequest request)
+        public RequestJsonContent()
+        {
+        }
+
+        /// <summary>
+        /// 准备发出请求
+        /// </summary>
+        /// <param name="request"></param>
+        public override void Prepare(HttpWebRequest request)
 		{
 			if (_object != null)
 				_jsonContent = Context.JsonSerialize(_object);
